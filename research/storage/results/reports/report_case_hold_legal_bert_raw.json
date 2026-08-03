@@ -1,0 +1,300 @@
+{
+  "title": "A Semantic- and Energy-Aware Study of Spike Encoding for Legal Text Classification Under Domain Shift",
+  "timestamp": "2026-08-02 00:49:22",
+  "classification": {
+    "transformer_legal_bert": {
+      "accuracy": 0.34,
+      "f1_macro": 0.3300076277650648,
+      "f1_micro": 0.34,
+      "n_train": 100,
+      "n_val": 50,
+      "model": "legal_bert",
+      "mode": "linear_probe"
+    },
+    "snn_poisson_rate": {
+      "accuracy": 0.18,
+      "f1_macro": 0.15716374269005848,
+      "f1_micro": 0.18
+    },
+    "snn_latency": {
+      "accuracy": 0.26,
+      "f1_macro": 0.08253968253968254,
+      "f1_micro": 0.26
+    },
+    "snn_temporal": {
+      "accuracy": 0.22,
+      "f1_macro": 0.14666666666666667,
+      "f1_micro": 0.22
+    },
+    "snn_population": {
+      "accuracy": 0.24,
+      "f1_macro": 0.11902834008097166,
+      "f1_micro": 0.24
+    },
+    "snn_binary_threshold": {
+      "accuracy": 0.18,
+      "f1_macro": 0.131203007518797,
+      "f1_micro": 0.18
+    }
+  },
+  "semantic": {
+    "poisson_rate": {
+      "encoding": "poisson_rate",
+      "n_samples": 200,
+      "mean_cosine_similarity": 0.9967379570007324,
+      "std_cosine_similarity": 0.001555028255097568,
+      "spearman_rho": 0.9895505848507028,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.924863980189604,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.07,
+      "topk_nn_overlap_k10": 0.13,
+      "topk_nn_overlap_k20": 0.253,
+      "normalized_mse": 0.02711111307144165
+    },
+    "latency": {
+      "encoding": "latency",
+      "n_samples": 200,
+      "mean_cosine_similarity": 0.9997105598449707,
+      "std_cosine_similarity": 3.963496055803262e-05,
+      "spearman_rho": 0.9973361872948732,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.9710016183019563,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.576,
+      "topk_nn_overlap_k10": 0.654,
+      "topk_nn_overlap_k20": 0.73725,
+      "normalized_mse": 0.005740555934607983
+    },
+    "temporal": {
+      "encoding": "temporal",
+      "n_samples": 200,
+      "mean_cosine_similarity": 0.9997517466545105,
+      "std_cosine_similarity": 5.09914752910845e-05,
+      "spearman_rho": 0.998569742815286,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.977209945212289,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.5569999999999999,
+      "topk_nn_overlap_k10": 0.628,
+      "topk_nn_overlap_k20": 0.7425,
+      "normalized_mse": 0.0036332844756543636
+    },
+    "population": {
+      "encoding": "population",
+      "n_samples": 200,
+      "mean_cosine_similarity": 0.9996830224990845,
+      "std_cosine_similarity": 6.711509195156395e-05,
+      "spearman_rho": 0.998032380289047,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.9705609324426709,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.6119999999999999,
+      "topk_nn_overlap_k10": 0.684,
+      "topk_nn_overlap_k20": 0.76725,
+      "normalized_mse": 0.004346050322055817
+    },
+    "binary_threshold": {
+      "encoding": "binary_threshold",
+      "n_samples": 200,
+      "mean_cosine_similarity": 0.5234825611114502,
+      "std_cosine_similarity": 0.02073732018470764,
+      "spearman_rho": 0.840741556512906,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.6370639389809626,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.467,
+      "topk_nn_overlap_k10": 0.519,
+      "topk_nn_overlap_k20": 0.59275,
+      "normalized_mse": 0.30860528349876404
+    }
+  },
+  "energy": {
+    "poisson_rate": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 28311776.136533342,
+        "sparsity": 0.2454148530960083,
+        "active_fraction": 0.7545851469039917,
+        "compute_energy_pj": 25480598.52288001,
+        "memory_energy_pj": 22253621.484375,
+        "total_energy_pj": 47734220.00725501,
+        "total_energy_uj": 47.73422000725501,
+        "total_energy_mj": 0.04773422000725501
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 47734220.00725501,
+        "energy_ratio": 4538.158194617522,
+        "energy_savings_pct": 99.97796462888434,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 8286.749210384483,
+        "memory_penalty": 0.010272856831037395,
+        "spike_sparsity_pct": 24.54148530960083
+      },
+      "classification": {
+        "accuracy": 0.18,
+        "f1_macro": 0.15716374269005848,
+        "f1_micro": 0.18
+      }
+    },
+    "latency": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 306370.3801302084,
+        "sparsity": 0.9800260663032532,
+        "active_fraction": 0.019973933696746826,
+        "compute_energy_pj": 275733.34211718757,
+        "memory_energy_pj": 589055.2734375,
+        "total_energy_pj": 864788.6155546876,
+        "total_energy_uj": 0.8647886155546876,
+        "total_energy_mj": 0.0008647886155546875
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 864788.6155546876,
+        "energy_ratio": 250495.25143280637,
+        "energy_savings_pct": 99.99960079083564,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 765780.9101659529,
+        "memory_penalty": 0.0002719234032914519,
+        "spike_sparsity_pct": 98.00260663032532
+      },
+      "classification": {
+        "accuracy": 0.26,
+        "f1_macro": 0.08253968253968254,
+        "f1_micro": 0.26
+      }
+    },
+    "temporal": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 306785.27999999997,
+        "sparsity": 0.9800000190734863,
+        "active_fraction": 0.019999980926513672,
+        "compute_energy_pj": 276106.752,
+        "memory_energy_pj": 589823.4375,
+        "total_energy_pj": 865930.1895,
+        "total_energy_uj": 0.8659301895,
+        "total_energy_mj": 0.0008659301895
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 865930.1895,
+        "energy_ratio": 250165.01828476784,
+        "energy_savings_pct": 99.99960026385509,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 764745.2594335686,
+        "memory_penalty": 0.000272278008021399,
+        "spike_sparsity_pct": 98.00000190734863
+      },
+      "classification": {
+        "accuracy": 0.22,
+        "f1_macro": 0.14666666666666667,
+        "f1_micro": 0.22
+      }
+    },
+    "population": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 173158089.7388941,
+        "sparsity": 0.44237667322158813,
+        "active_fraction": 0.5576233267784119,
+        "compute_energy_pj": 155842280.7650047,
+        "memory_energy_pj": 16444981.0546875,
+        "total_energy_pj": 172287261.8196922,
+        "total_energy_uj": 172.2872618196922,
+        "total_energy_mj": 0.1722872618196922
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 172287261.8196922,
+        "energy_ratio": 1257.3503078614717,
+        "energy_savings_pct": 99.92046766969017,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 1354.904000718496,
+        "memory_penalty": 0.007591435671831806,
+        "spike_sparsity_pct": 44.23766732215881
+      },
+      "classification": {
+        "accuracy": 0.24,
+        "f1_macro": 0.11902834008097166,
+        "f1_micro": 0.24
+      }
+    },
+    "binary_threshold": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 5423420.4080208335,
+        "sparsity": 0.754549503326416,
+        "active_fraction": 0.24545049667358398,
+        "compute_energy_pj": 4881078.3672187505,
+        "memory_energy_pj": 7238629.6875,
+        "total_energy_pj": 12119708.054718751,
+        "total_energy_uj": 12.119708054718751,
+        "total_energy_mj": 0.012119708054718752
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 12119708.054718751,
+        "energy_ratio": 17873.816820633554,
+        "energy_savings_pct": 99.99440522407701,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 43259.15582664871,
+        "memory_penalty": 0.0033415418018499167,
+        "spike_sparsity_pct": 75.4549503326416
+      },
+      "classification": {
+        "accuracy": 0.18,
+        "f1_macro": 0.131203007518797,
+        "f1_micro": 0.18
+      }
+    }
+  },
+  "domain_shift": null
+}

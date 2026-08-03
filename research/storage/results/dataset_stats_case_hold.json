@@ -1,0 +1,140 @@
+{
+  "dataset_info": {
+    "hf_name": "coastalcph/lex_glue",
+    "hf_config": "case_hold",
+    "task": "multi_class",
+    "text_col": "context",
+    "label_col": "label",
+    "description": "CaseHOLD \u2014 Legal holding classification (LexGLUE)"
+  },
+  "splits": {
+    "train": {
+      "split": "train",
+      "n_samples": 45000,
+      "n_classes": 5,
+      "is_multilabel": false,
+      "avg_labels_per_sample": 1.0,
+      "label_distribution": {
+        "0": 9108,
+        "1": 8874,
+        "4": 9008,
+        "3": 8944,
+        "2": 9066
+      },
+      "class_imbalance_ratio": 1.026369168356998,
+      "word_stats": {
+        "mean": 136.28373333333334,
+        "median": 137.0,
+        "max": 207,
+        "min": 1,
+        "std": 10.582088948155116
+      },
+      "char_stats": {
+        "mean": 843.278,
+        "max": 855
+      },
+      "token_stats": {
+        "mean": 177.16885333333335,
+        "median": 178.1,
+        "max": 269,
+        "pct_over_512": 0.0
+      }
+    },
+    "test": {
+      "split": "test",
+      "n_samples": 3600,
+      "n_classes": 5,
+      "is_multilabel": false,
+      "avg_labels_per_sample": 1.0,
+      "label_distribution": {
+        "4": 714,
+        "2": 727,
+        "3": 713,
+        "0": 721,
+        "1": 725
+      },
+      "class_imbalance_ratio": 1.0196353436185133,
+      "word_stats": {
+        "mean": 136.37555555555556,
+        "median": 137.0,
+        "max": 168,
+        "min": 16,
+        "std": 9.63570110591176
+      },
+      "char_stats": {
+        "mean": 843.5372222222222,
+        "max": 855
+      },
+      "token_stats": {
+        "mean": 177.28822222222223,
+        "median": 178.1,
+        "max": 218,
+        "pct_over_512": 0.0
+      }
+    },
+    "validation": {
+      "split": "validation",
+      "n_samples": 3900,
+      "n_classes": 5,
+      "is_multilabel": false,
+      "avg_labels_per_sample": 1.0,
+      "label_distribution": {
+        "3": 760,
+        "0": 770,
+        "4": 792,
+        "1": 804,
+        "2": 774
+      },
+      "class_imbalance_ratio": 1.0578947368421052,
+      "word_stats": {
+        "mean": 136.33282051282052,
+        "median": 137.0,
+        "max": 185,
+        "min": 7,
+        "std": 10.353817566412573
+      },
+      "char_stats": {
+        "mean": 843.2235897435897,
+        "max": 855
+      },
+      "token_stats": {
+        "mean": 177.2326666666667,
+        "median": 178.1,
+        "max": 240,
+        "pct_over_512": 0.0
+      }
+    }
+  },
+  "global": {
+    "split": "all",
+    "n_samples": 52500,
+    "n_classes": 5,
+    "is_multilabel": false,
+    "avg_labels_per_sample": 1.0,
+    "label_distribution": {
+      "0": 10599,
+      "1": 10403,
+      "4": 10514,
+      "3": 10417,
+      "2": 10567
+    },
+    "class_imbalance_ratio": 1.0188407190233586,
+    "word_stats": {
+      "mean": 136.2936761904762,
+      "median": 137.0,
+      "max": 207,
+      "min": 1,
+      "std": 10.50305724244158
+    },
+    "char_stats": {
+      "mean": 843.2917333333334,
+      "max": 855
+    },
+    "token_stats": {
+      "mean": 177.18177904761905,
+      "median": 178.1,
+      "max": 269,
+      "pct_over_512": 0.0
+    }
+  }
+}

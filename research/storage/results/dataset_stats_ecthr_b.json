@@ -1,0 +1,160 @@
+{
+  "dataset_info": {
+    "hf_name": "coastalcph/lex_glue",
+    "hf_config": "ecthr_b",
+    "task": "multi_label",
+    "text_col": "text",
+    "label_col": "labels",
+    "description": "ECtHR-B \u2014 ECtHR silver-rationale classification (LexGLUE)"
+  },
+  "splits": {
+    "train": {
+      "split": "train",
+      "n_samples": 3000,
+      "n_classes": 10,
+      "is_multilabel": true,
+      "avg_labels_per_sample": 1.5113333333333334,
+      "label_distribution": {
+        "4": 335,
+        "8": 230,
+        "3": 2244,
+        "9": 639,
+        "6": 161,
+        "5": 33,
+        "7": 47,
+        "0": 131,
+        "2": 413,
+        "1": 301
+      },
+      "class_imbalance_ratio": 68.0,
+      "word_stats": {
+        "mean": 1282.325,
+        "median": 746.5,
+        "max": 35973,
+        "min": 105,
+        "std": 1787.568084682371
+      },
+      "char_stats": {
+        "mean": 7710.588,
+        "max": 213203
+      },
+      "token_stats": {
+        "mean": 1667.0225,
+        "median": 970.45,
+        "max": 46764,
+        "pct_over_512": 0.727
+      }
+    },
+    "test": {
+      "split": "test",
+      "n_samples": 1000,
+      "n_classes": 10,
+      "is_multilabel": true,
+      "avg_labels_per_sample": 1.435,
+      "label_distribution": {
+        "6": 106,
+        "4": 188,
+        "3": 394,
+        "1": 234,
+        "2": 196,
+        "0": 76,
+        "9": 155,
+        "5": 11,
+        "7": 43,
+        "8": 32
+      },
+      "class_imbalance_ratio": 35.81818181818182,
+      "word_stats": {
+        "mean": 1950.01,
+        "median": 1434.0,
+        "max": 16065,
+        "min": 105,
+        "std": 1865.3168213201745
+      },
+      "char_stats": {
+        "mean": 11832.812,
+        "max": 97124
+      },
+      "token_stats": {
+        "mean": 2535.013,
+        "median": 1864.2,
+        "max": 20884,
+        "pct_over_512": 0.892
+      }
+    },
+    "validation": {
+      "split": "validation",
+      "n_samples": 500,
+      "n_classes": 10,
+      "is_multilabel": true,
+      "avg_labels_per_sample": 1.378,
+      "label_distribution": {
+        "4": 64,
+        "1": 112,
+        "3": 195,
+        "7": 14,
+        "2": 122,
+        "0": 44,
+        "9": 89,
+        "6": 29,
+        "5": 4,
+        "8": 16
+      },
+      "class_imbalance_ratio": 48.75,
+      "word_stats": {
+        "mean": 1902.576,
+        "median": 1363.5,
+        "max": 14746,
+        "min": 88,
+        "std": 1990.3505330026667
+      },
+      "char_stats": {
+        "mean": 11529.032,
+        "max": 90185
+      },
+      "token_stats": {
+        "mean": 2473.3488,
+        "median": 1772.55,
+        "max": 19169,
+        "pct_over_512": 0.87
+      }
+    }
+  },
+  "global": {
+    "split": "all",
+    "n_samples": 4500,
+    "n_classes": 10,
+    "is_multilabel": true,
+    "avg_labels_per_sample": 1.4795555555555555,
+    "label_distribution": {
+      "4": 587,
+      "8": 278,
+      "3": 2833,
+      "9": 883,
+      "6": 296,
+      "5": 48,
+      "7": 104,
+      "0": 251,
+      "2": 731,
+      "1": 647
+    },
+    "class_imbalance_ratio": 59.020833333333336,
+    "word_stats": {
+      "mean": 1499.6162222222222,
+      "median": 905.0,
+      "max": 35973,
+      "min": 88,
+      "std": 1854.2469396985084
+    },
+    "char_stats": {
+      "mean": 9050.909333333333,
+      "max": 213203
+    },
+    "token_stats": {
+      "mean": 1949.501088888889,
+      "median": 1176.5,
+      "max": 46764,
+      "pct_over_512": 0.7795555555555556
+    }
+  }
+}
