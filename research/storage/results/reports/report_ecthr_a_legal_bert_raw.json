@@ -1,0 +1,445 @@
+{
+  "title": "A Semantic- and Energy-Aware Study of Spike Encoding for Legal Text Classification Under Domain Shift",
+  "timestamp": "2026-08-01 23:42:55",
+  "classification": {
+    "transformer_legal_bert": {
+      "accuracy": 0.312,
+      "f1_macro": 0.13307492766309917,
+      "f1_micro": 0.312,
+      "n_train": 3000,
+      "n_val": 500,
+      "model": "legal_bert",
+      "mode": "linear_probe"
+    },
+    "snn_poisson_rate": {
+      "accuracy": 0.08,
+      "f1_macro": 0.013314203730272596,
+      "f1_micro": 0.08
+    },
+    "snn_latency": {
+      "accuracy": 0.08,
+      "f1_macro": 0.011904761904761904,
+      "f1_micro": 0.08
+    },
+    "snn_temporal": {
+      "accuracy": 0.18,
+      "f1_macro": 0.019067796610169493,
+      "f1_micro": 0.18
+    },
+    "snn_population": {
+      "accuracy": 0.18,
+      "f1_macro": 0.019067796610169493,
+      "f1_micro": 0.18
+    },
+    "snn_binary_threshold": {
+      "accuracy": 0.18,
+      "f1_macro": 0.03571428571428571,
+      "f1_micro": 0.18
+    }
+  },
+  "semantic": {
+    "poisson_rate": {
+      "encoding": "poisson_rate",
+      "n_samples": 100,
+      "mean_cosine_similarity": 0.9963885545730591,
+      "std_cosine_similarity": 0.0005207518697716296,
+      "spearman_rho": 0.9423026662506709,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.8058892662515889,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.272,
+      "topk_nn_overlap_k10": 0.36199999999999993,
+      "topk_nn_overlap_k20": 0.47950000000000004,
+      "normalized_mse": 0.039168667048215866
+    },
+    "latency": {
+      "encoding": "latency",
+      "n_samples": 100,
+      "mean_cosine_similarity": 0.9998935461044312,
+      "std_cosine_similarity": 1.0145351552637294e-05,
+      "spearman_rho": 0.998731739133758,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.9710581250393671,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.9079999999999999,
+      "topk_nn_overlap_k10": 0.9050000000000002,
+      "topk_nn_overlap_k20": 0.9335000000000002,
+      "normalized_mse": 0.003512277500703931
+    },
+    "temporal": {
+      "encoding": "temporal",
+      "n_samples": 100,
+      "mean_cosine_similarity": 0.9997250437736511,
+      "std_cosine_similarity": 4.546222771750763e-05,
+      "spearman_rho": 0.9952798906925586,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.9452505435323311,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.8099999999999998,
+      "topk_nn_overlap_k10": 0.825,
+      "topk_nn_overlap_k20": 0.87,
+      "normalized_mse": 0.009197422303259373
+    },
+    "population": {
+      "encoding": "population",
+      "n_samples": 100,
+      "mean_cosine_similarity": 0.9995678067207336,
+      "std_cosine_similarity": 6.054086406948045e-05,
+      "spearman_rho": 0.9970561973612518,
+      "spearman_p": 0.0,
+      "kendall_tau": 0.9545530063210401,
+      "kendall_p": 0.0,
+      "topk_nn_overlap_k5": 0.856,
+      "topk_nn_overlap_k10": 0.8780000000000002,
+      "topk_nn_overlap_k20": 0.9105,
+      "normalized_mse": 0.005648989696055651
+    },
+    "binary_threshold": {
+      "encoding": "binary_threshold",
+      "n_samples": 100,
+      "mean_cosine_similarity": 0.5414583683013916,
+      "std_cosine_similarity": 0.004407438449561596,
+      "spearman_rho": 0.37024233841011656,
+      "spearman_p": 1.195446967217847e-160,
+      "kendall_tau": 0.25873545150445976,
+      "kendall_p": 2.564368852703866e-160,
+      "topk_nn_overlap_k5": 0.6259999999999998,
+      "topk_nn_overlap_k10": 0.659,
+      "topk_nn_overlap_k20": 0.6795000000000002,
+      "normalized_mse": 0.2547056972980499
+    }
+  },
+  "energy": {
+    "poisson_rate": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 32744926.805240404,
+        "sparsity": 0.3570628762245178,
+        "active_fraction": 0.6429371237754822,
+        "compute_energy_pj": 29470434.124716364,
+        "memory_energy_pj": 18960987.3046875,
+        "total_energy_pj": 48431421.429403864,
+        "total_energy_uj": 48.43142142940386,
+        "total_energy_mj": 0.04843142142940386
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 48431421.429403864,
+        "energy_ratio": 4472.8284922499,
+        "energy_savings_pct": 99.97764278237511,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 7164.853045463313,
+        "memory_penalty": 0.008752890314636485,
+        "spike_sparsity_pct": 35.70628762245178
+      },
+      "classification": {
+        "accuracy": 0.08,
+        "f1_macro": 0.013314203730272596,
+        "f1_micro": 0.08
+      }
+    },
+    "latency": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 302445.65653076733,
+        "sparsity": 0.9866852164268494,
+        "active_fraction": 0.013314783573150635,
+        "compute_energy_pj": 272201.0908776906,
+        "memory_energy_pj": 392668.9453125,
+        "total_energy_pj": 664870.0361901906,
+        "total_energy_uj": 0.6648700361901906,
+        "total_energy_mj": 0.0006648700361901906
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 664870.0361901906,
+        "energy_ratio": 325816.2195590851,
+        "energy_savings_pct": 99.99969307850868,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 775718.1611901681,
+        "memory_penalty": 0.00018126631029569956,
+        "spike_sparsity_pct": 98.66852164268494
+      },
+      "classification": {
+        "accuracy": 0.08,
+        "f1_macro": 0.011904761904761904,
+        "f1_micro": 0.08
+      }
+    },
+    "temporal": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 302878.72,
+        "sparsity": 0.9866666793823242,
+        "active_fraction": 0.013333320617675781,
+        "compute_energy_pj": 272590.848,
+        "memory_energy_pj": 393215.625,
+        "total_energy_pj": 665806.473,
+        "total_energy_uj": 0.665806473,
+        "total_energy_mj": 0.000665806473
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 665806.473,
+        "energy_ratio": 325357.96883068146,
+        "energy_savings_pct": 99.99969264622483,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 774609.0202177293,
+        "memory_penalty": 0.000181518672014266,
+        "spike_sparsity_pct": 98.66666793823242
+      },
+      "classification": {
+        "accuracy": 0.18,
+        "f1_macro": 0.019067796610169493,
+        "f1_micro": 0.18
+      }
+    },
+    "population": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 301673388.452021,
+        "sparsity": 0.3899964690208435,
+        "active_fraction": 0.6100035309791565,
+        "compute_energy_pj": 271506049.6068189,
+        "memory_energy_pj": 17989736.1328125,
+        "total_energy_pj": 289495785.7396314,
+        "total_energy_uj": 289.4957857396314,
+        "total_energy_mj": 0.2894957857396314
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 289495785.7396314,
+        "energy_ratio": 748.2853027934229,
+        "energy_savings_pct": 99.8663611330776,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 777.7039590660262,
+        "memory_penalty": 0.008304535234873187,
+        "spike_sparsity_pct": 38.99964690208435
+      },
+      "classification": {
+        "accuracy": 0.18,
+        "f1_macro": 0.019067796610169493,
+        "f1_micro": 0.18
+      }
+    },
+    "binary_threshold": {
+      "snn_energy": {
+        "model": "snn",
+        "n_sop_per_sample": 8330400.0,
+        "sparsity": 0.75,
+        "active_fraction": 0.25,
+        "compute_energy_pj": 7497360.0,
+        "memory_energy_pj": 7372800.0,
+        "total_energy_pj": 14870160.0,
+        "total_energy_uj": 14.87016,
+        "total_energy_mj": 0.01487016
+      },
+      "transformer_energy": {
+        "model": "transformer",
+        "n_mac_ops": 45902462976,
+        "compute_energy_pj": 211151329689.59998,
+        "memory_energy_pj": 5474112000.0,
+        "total_energy_pj": 216625441689.59998,
+        "total_energy_mj": 216.62544168959997,
+        "total_energy_uj": 216625.44168959997
+      },
+      "comparison": {
+        "transformer_total_pj": 216625441689.59998,
+        "snn_total_pj": 14870160.0,
+        "energy_ratio": 14567.79494568989,
+        "energy_savings_pct": 99.99313554313657,
+        "snn_is_cheaper": true,
+        "compute_only_ratio": 28163.424150581002,
+        "memory_penalty": 0.003403478346077372,
+        "spike_sparsity_pct": 75.0
+      },
+      "classification": {
+        "accuracy": 0.18,
+        "f1_macro": 0.03571428571428571,
+        "f1_micro": 0.18
+      }
+    }
+  },
+  "domain_shift": {
+    "transformer": {
+      "avg_accuracy_drop": 0.5933333333333333,
+      "avg_target_accuracy": 0.4066666666666667,
+      "avg_h_score": 0.5781990521327014,
+      "n_transfers": 1,
+      "per_transfer": [
+        {
+          "source": "ecthr_a",
+          "target": "ecthr_b",
+          "model_type": "transformer",
+          "source_accuracy": 1.0,
+          "source_f1_macro": 1.0,
+          "target_accuracy": 0.4066666666666667,
+          "target_f1_macro": 0.3091587777857042,
+          "accuracy_drop": 0.5933333333333333,
+          "f1_drop": 0.6908412222142958,
+          "relative_drop_pct": 59.33333333333333,
+          "h_score": 0.5781990521327014
+        }
+      ]
+    },
+    "snn_poisson_rate": {
+      "avg_accuracy_drop": 0.6133333333333333,
+      "avg_target_accuracy": 0.38666666666666666,
+      "avg_h_score": 0.5576923076923077,
+      "n_transfers": 1,
+      "per_transfer": [
+        {
+          "source": "ecthr_a",
+          "target": "ecthr_b",
+          "model_type": "snn_poisson_rate",
+          "source_accuracy": 1.0,
+          "source_f1_macro": 1.0,
+          "target_accuracy": 0.38666666666666666,
+          "target_f1_macro": 0.0964243534310193,
+          "accuracy_drop": 0.6133333333333333,
+          "f1_drop": 0.9035756465689807,
+          "relative_drop_pct": 61.33333333333333,
+          "h_score": 0.5576923076923077
+        }
+      ]
+    },
+    "snn_latency": {
+      "avg_accuracy_drop": 0.5700000000000001,
+      "avg_target_accuracy": 0.43,
+      "avg_h_score": 0.6013986013986015,
+      "n_transfers": 1,
+      "per_transfer": [
+        {
+          "source": "ecthr_a",
+          "target": "ecthr_b",
+          "model_type": "snn_latency",
+          "source_accuracy": 1.0,
+          "source_f1_macro": 1.0,
+          "target_accuracy": 0.43,
+          "target_f1_macro": 0.3191758098364407,
+          "accuracy_drop": 0.5700000000000001,
+          "f1_drop": 0.6808241901635592,
+          "relative_drop_pct": 57.00000000000001,
+          "h_score": 0.6013986013986015
+        }
+      ]
+    },
+    "snn_temporal": {
+      "avg_accuracy_drop": 0.54,
+      "avg_target_accuracy": 0.46,
+      "avg_h_score": 0.6301369863013699,
+      "n_transfers": 1,
+      "per_transfer": [
+        {
+          "source": "ecthr_a",
+          "target": "ecthr_b",
+          "model_type": "snn_temporal",
+          "source_accuracy": 1.0,
+          "source_f1_macro": 1.0,
+          "target_accuracy": 0.46,
+          "target_f1_macro": 0.32704382118384756,
+          "accuracy_drop": 0.54,
+          "f1_drop": 0.6729561788161524,
+          "relative_drop_pct": 54.0,
+          "h_score": 0.6301369863013699
+        }
+      ]
+    },
+    "snn_population": {
+      "avg_accuracy_drop": 0.5700000000000001,
+      "avg_target_accuracy": 0.43,
+      "avg_h_score": 0.6013986013986015,
+      "n_transfers": 1,
+      "per_transfer": [
+        {
+          "source": "ecthr_a",
+          "target": "ecthr_b",
+          "model_type": "snn_population",
+          "source_accuracy": 1.0,
+          "source_f1_macro": 1.0,
+          "target_accuracy": 0.43,
+          "target_f1_macro": 0.30733378429352537,
+          "accuracy_drop": 0.5700000000000001,
+          "f1_drop": 0.6926662157064747,
+          "relative_drop_pct": 57.00000000000001,
+          "h_score": 0.6013986013986015
+        }
+      ]
+    },
+    "snn_binary_threshold": {
+      "avg_accuracy_drop": 0.5800000000000001,
+      "avg_target_accuracy": 0.42,
+      "avg_h_score": 0.5915492957746479,
+      "n_transfers": 1,
+      "per_transfer": [
+        {
+          "source": "ecthr_a",
+          "target": "ecthr_b",
+          "model_type": "snn_binary_threshold",
+          "source_accuracy": 1.0,
+          "source_f1_macro": 1.0,
+          "target_accuracy": 0.42,
+          "target_f1_macro": 0.3248546148200127,
+          "accuracy_drop": 0.5800000000000001,
+          "f1_drop": 0.6751453851799873,
+          "relative_drop_pct": 58.00000000000001,
+          "h_score": 0.5915492957746479
+        }
+      ]
+    },
+    "_ranking_by_robustness": [
+      "snn_temporal",
+      "snn_latency",
+      "snn_population",
+      "snn_binary_threshold",
+      "transformer",
+      "snn_poisson_rate"
+    ],
+    "_embedding_shift": {
+      "source": "ecthr_a",
+      "target": "ecthr_b",
+      "centroid_distance": 0.0,
+      "centroid_cosine_similarity": 1.0,
+      "mmd": 0.0,
+      "source_variance": 0.06666889041662216,
+      "target_variance": 0.06666889041662216,
+      "variance_ratio": 1.0
+    }
+  }
+}

@@ -1,0 +1,4 @@
+yeh run kar 
+
+cd research
+ python main.py run --dataset case_hold --encoder legal_bert --target-dataset ecthr_a
